@@ -222,6 +222,7 @@ module RGeo
         @opened = true
         @main_file = ::File.open(path_+'.shp', 'rb:ascii-8bit')
         @index_file = ::File.open(path_+'.shx', 'rb:ascii-8bit')
+        @prj_file = ::File.open(path_+'.prj', 'rb:ascii-8bit')
         if ::File.file?(path_+'.dbf') && ::File.readable?(path_+'.dbf')
           @attr_dbf = ::DBF::Table.new(path_+'.dbf')
         else

@@ -387,6 +387,10 @@ module RGeo
       def cur_index
         @opened ? @cur_record_index : nil
       end
+      
+      def prj
+        @opened ? @prj_file.read : nil  
+      end
 
 
       # Read and return the next record as a Reader::Record.

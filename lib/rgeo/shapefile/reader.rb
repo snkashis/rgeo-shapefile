@@ -285,6 +285,7 @@ module RGeo
         if @opened
           @main_file.close
           @index_file.close
+          @prj_file.close if @prj_file
           @attr_dbf.close if @attr_dbf
           @opened = false
         end
@@ -395,7 +396,7 @@ module RGeo
       end
       
       def prj
-        @opened ? @prj_file.read : nil  
+        @opened ? (@prj_file ? true : false) ? @prj_file.read : nil  
       end
 
 

@@ -396,7 +396,7 @@ module RGeo
       end
       
       def prj
-        @opened ? (@prj_file ? true : false) ? @prj_file.read : nil  
+        @opened && @prj_file ? @prj_file.read : nil  
       end
 
 
